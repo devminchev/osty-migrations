@@ -1,0 +1,19 @@
+[
+    {
+        "id": 1757941969,
+        "command": "apply",
+        "method": "put",
+        "path": "/games-v2/_settings",
+        "query": {
+            "settings": {
+                "index": {
+                    "mapping": {
+                        "total_fields": {
+                            "limit": "2000"
+                        }
+                    }
+                }
+            }
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1745586944,
+        "command": "apply",
+        "method": "post",
+        "path": "/_aliases",
+        "query": {
+            "actions": [
+                {
+                    "add": {
+                        "index": "navigation",
+                        "alias": "ig-sections"
+                    }
+                }
+            ]
+        }
+    }
+]

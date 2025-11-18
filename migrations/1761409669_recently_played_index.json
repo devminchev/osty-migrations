@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1761409669,
+        "command": "apply",
+        "method": "put",
+        "path": "/ml-recently-played",
+        "query": {
+            "settings": {
+                "index": {
+                    "number_of_shards": 1,
+                    "number_of_replicas": 2,
+                    "refresh_interval": "-1"
+                }
+            },
+            "aliases": {
+                "recently-played-r": {},
+                "recently-played-w": {
+                    "is_write_index": true
+                }
+            }
+        }
+    }
+]

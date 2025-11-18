@@ -1,0 +1,163 @@
+[
+    {
+        "id": 1736523818,
+        "command": "apply",
+        "method": "put",
+        "path": "/ventures",
+        "query": {
+            "settings": {
+                "index": {
+                    "number_of_shards": 1,
+                    "number_of_replicas": 2
+                }
+            },
+            "aliases": {
+                "personalisation": {},
+                "ventures-r": {},
+                "ventures-w": {
+                    "is_write_index": true
+                }
+            }
+        }
+    },
+    {
+        "id": 1736523819,
+        "command": "apply",
+        "method": "put",
+        "path": "/categories",
+        "query": {
+            "settings": {
+                "index": {
+                    "number_of_shards": 1,
+                    "number_of_replicas": 2
+                }
+            },
+            "aliases": {
+                "personalisation": {},
+                "categories-r": {},
+                "categories-w": {
+                    "is_write_index": true
+                }
+            }
+        }
+    },
+    {
+        "id": 1736523820,
+        "command": "apply",
+        "method": "put",
+        "path": "/layouts",
+        "query": {
+            "settings": {
+                "index": {
+                    "number_of_shards": 1,
+                    "number_of_replicas": 2
+                }
+            },
+            "aliases": {
+                "personalisation": {},
+                "layouts-r": {},
+                "layouts-w": {
+                    "is_write_index": true
+                }
+            }
+        }
+    },
+    {
+        "id": 1736523821,
+        "command": "apply",
+        "method": "put",
+        "path": "/sections",
+        "query": {
+            "settings": {
+                "index": {
+                    "number_of_shards": 1,
+                    "number_of_replicas": 2
+                }
+            },
+            "aliases": {
+                "personalisation": {},
+                "all-sections": {},
+                "sections-r": {},
+                "sections-w": {
+                    "is_write_index": true
+                }
+            }
+        }
+    },
+    {
+        "id": 1736523822,
+        "command": "apply",
+        "method": "put",
+        "path": "/games",
+        "query": {
+            "settings": {
+                "index": {
+                    "number_of_shards": 1,
+                    "number_of_replicas": 2
+                }
+            },
+            "mappings": {
+                "properties": {
+                    "game_to_sitegame": {
+                        "type": "join",
+                        "relations": {
+                            "game": "sitegame"
+                        }
+                    }
+                }
+            },
+            "aliases": {
+                "personalisation": {},
+                "all-sections": {},
+                "games-r": {},
+                "games-w": {
+                    "is_write_index": true
+                }
+            }
+        }
+    },
+    {
+        "id": 1736523823,
+        "command": "apply",
+        "method": "put",
+        "path": "/personalised-sections",
+        "query": {
+            "settings": {
+                "index": {
+                    "number_of_shards": 1,
+                    "number_of_replicas": 2
+                }
+            },
+            "aliases": {
+                "personalisation": {},
+                "all-sections": {},
+                "personalised-sections-r": {},
+                "personalised-sections-w": {
+                    "is_write_index": true
+                }
+            }
+        }
+    },
+    {
+        "id": 1736523824,
+        "command": "apply",
+        "method": "put",
+        "path": "/personalisation-defaults",
+        "query": {
+            "settings": {
+                "index": {
+                    "number_of_shards": 1,
+                    "number_of_replicas": 2
+                }
+            },
+            "aliases": {
+                "personalisation": {},
+                "all-personalisation-defaults": {},
+                "personalisation-defaults-r": {},
+                "personalisation-defaults-w": {
+                    "is_write_index": true
+                }
+            }
+        }
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1741280482,
+        "command": "apply",
+        "method": "put",
+        "path": "/games-archived",
+        "query": {
+            "settings": {
+                "index": {
+                    "number_of_shards": 1,
+                    "number_of_replicas": 2
+                }
+            },
+            "mappings": {
+                "properties": {
+                    "game_to_sitegame": {
+                        "type": "join",
+                        "relations": {
+                            "game": "sitegame"
+                        }
+                    }
+                }
+            },
+            "aliases": {
+                "personalisation": {},
+                "all-sections": {},
+                "games-archived-r": {},
+                "games-archived-w": {
+                    "is_write_index": true
+                }
+            }
+        }
+    }
+]

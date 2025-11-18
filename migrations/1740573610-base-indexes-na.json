@@ -1,0 +1,216 @@
+[
+    {
+        "id": 1740573610,
+        "command": "apply",
+        "method": "put",
+        "path": "/themes",
+        "query": {
+            "settings": {
+                "index": {
+                    "number_of_shards": 1,
+                    "number_of_replicas": 2
+                }
+            },
+            "aliases": {
+                "ig-models": {},
+                "themes-r": {},
+                "themes-w": {
+                    "is_write_index": true
+                }
+            }
+        }
+    },
+    {
+        "id": 1740573611,
+        "command": "apply",
+        "method": "post",
+        "path": "/_aliases",
+        "query": {
+            "actions": [
+                {
+                    "add": {
+                        "index": "ventures",
+                        "alias": "ig-models"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 1740573612,
+        "command": "apply",
+        "method": "put",
+        "path": "/navigation",
+        "query": {
+            "settings": {
+                "index": {
+                    "number_of_shards": 1,
+                    "number_of_replicas": 2
+                }
+            },
+            "aliases": {
+                "ig-models": {},
+                "navigation-r": {},
+                "navigation-w": {
+                    "is_write_index": true
+                }
+            }
+        }
+    },
+    {
+        "id": 1740573613,
+        "command": "apply",
+        "method": "put",
+        "path": "/views",
+        "query": {
+            "settings": {
+                "index": {
+                    "number_of_shards": 1,
+                    "number_of_replicas": 2
+                }
+            },
+            "aliases": {
+                "ig-models": {},
+                "views-r": {},
+                "views-w": {
+                    "is_write_index": true
+                }
+            }
+        }
+    },
+    {
+        "id": 1740573614,
+        "command": "apply",
+        "method": "put",
+        "path": "/game-sections",
+        "query": {
+            "settings": {
+                "index": {
+                    "number_of_shards": 1,
+                    "number_of_replicas": 2
+                }
+            },
+            "aliases": {
+                "ig-models": {},
+                "ig-sections": {},
+                "game-sections-r": {},
+                "game-sections-w": {
+                    "is_write_index": true
+                }
+            }
+        }
+    },
+    {
+        "id": 1740573615,
+        "command": "apply",
+        "method": "put",
+        "path": "/ml-personalised-sections",
+        "query": {
+            "settings": {
+                "index": {
+                    "number_of_shards": 1,
+                    "number_of_replicas": 2
+                }
+            },
+            "aliases": {
+                "ig-models": {},
+                "ig-sections": {},
+                "ml-sections-r": {},
+                "ml-sections-w": {
+                    "is_write_index": true
+                }
+            }
+        }
+    },
+    {
+        "id": 1740573616,
+        "command": "apply",
+        "method": "put",
+        "path": "/ml-personalised-sections-defaults",
+        "query": {
+            "settings": {
+                "index": {
+                    "number_of_shards": 1,
+                    "number_of_replicas": 2
+                }
+            },
+            "aliases": {
+                "ig-models": {},
+                "ig-sections": {},
+                "ml-sections-defaults-r": {},
+                "ml-sections-defaults-w": {
+                    "is_write_index": true
+                }
+            }
+        }
+    },
+    {
+        "id": 1740573617,
+        "command": "apply",
+        "method": "put",
+        "path": "/marketing-sections",
+        "query": {
+            "settings": {
+                "index": {
+                    "number_of_shards": 1,
+                    "number_of_replicas": 2
+                }
+            },
+            "aliases": {
+                "ig-models": {},
+                "ig-sections": {},
+                "marketing-sections-r": {},
+                "marketing-sections-w": {
+                    "is_write_index": true
+                }
+            }
+        }
+    },
+    {
+        "id": 1740573618,
+        "command": "apply",
+        "method": "post",
+        "path": "/_aliases",
+        "query": {
+            "actions": [
+                {
+                    "add": {
+                        "index": "games",
+                        "alias": "ig-models"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 1740573619,
+        "command": "apply",
+        "method": "put",
+        "path": "/games-v2",
+        "query": {
+            "settings": {
+                "index": {
+                    "number_of_shards": 1,
+                    "number_of_replicas": 2
+                }
+            },
+            "mappings": {
+                "properties": {
+                    "game_to_sitegame": {
+                        "type": "join",
+                        "relations": {
+                            "game": "sitegame"
+                        }
+                    }
+                }
+            },
+            "aliases": {
+                "ig-models": {},
+                "games-v2-r": {},
+                "games-v2-w": {
+                    "is_write_index": true
+                }
+            }
+        }
+    }
+]

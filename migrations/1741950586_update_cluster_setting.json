@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1741950586,
+        "command": "apply",
+        "method": "put",
+        "path": "/_cluster/settings",
+        "query": {
+            "persistent": {
+                "action.auto_create_index": false
+            }
+        }
+    }
+]
