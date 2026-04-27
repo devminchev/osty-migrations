@@ -1,0 +1,215 @@
+[
+    {
+        "id": 1770064516,
+        "command": "apply",
+        "method": "put",
+        "path": "/games-v3",
+        "query": {
+            "settings": {
+                "index": {
+                    "number_of_shards": 1,
+                    "number_of_replicas": 2
+                }
+            },
+            "mappings": {
+                "properties": {
+                    "game_to_sitegame": {
+                        "type": "join",
+                        "relations": {
+                            "game": "sitegame"
+                        }
+                    },
+                    "game": {
+                        "type": "object",
+                        "dynamic": false,
+                        "properties": {
+                            "id": {
+                                "type": "keyword"
+                            },
+                            "contentType": {
+                                "type": "keyword"
+                            },
+                            "entryTitle": {
+                                "type": "keyword"
+                            },
+                            "gameName": {
+                                "type": "keyword"
+                            },
+                            "gameSkin": {
+                                "type": "keyword"
+                            },
+                            "mobileGameName": {
+                                "type": "keyword"
+                            },
+                            "mobileGameSkin": {
+                                "type": "keyword"
+                            },
+                            "vendor": {
+                                "type": "keyword"
+                            },
+                            "platformVisibility": {
+                                "type": "text",
+                                "fields": {
+                                    "keyword": {
+                                        "type": "keyword",
+                                        "ignore_above": 256
+                                    }
+                                }
+                            },
+                            "cmsEnv": {
+                                "type": "keyword"
+                            },
+                            "mobileOverride": {
+                                "type": "boolean"
+                            },
+                            "rtp": {
+                                "type": "float"
+                            },
+                            "progressiveJackpot": {
+                                "type": "boolean"
+                            },
+                            "updatedAt": {
+                                "type": "date"
+                            },
+                            "title": {
+                                "type": "object",
+                                "enabled": false
+                            },
+                            "gamePlatformConfig": {
+                                "type": "object",
+                                "enabled": false
+                            },
+                            "imgUrlPattern": {
+                                "type": "object",
+                                "enabled": false
+                            },
+                            "loggedOutImgUrlPattern": {
+                                "type": "object",
+                                "enabled": false
+                            },
+                            "infoImgUrlPattern": {
+                                "type": "object",
+                                "enabled": false
+                            },
+                            "infoDetails": {
+                                "type": "object",
+                                "enabled": false
+                            },
+                            "introductionContent": {
+                                "type": "object",
+                                "enabled": false
+                            },
+                            "representativeColor": {
+                                "type": "object",
+                                "enabled": false
+                            },
+                            "maxBet": {
+                                "type": "object",
+                                "enabled": false
+                            },
+                            "minBet": {
+                                "type": "object",
+                                "enabled": false
+                            },
+                            "funPanelBackgroundImage": {
+                                "type": "keyword",
+                                "index": false,
+                                "doc_values": false
+                            },
+                            "funPanelDefaultCategory": {
+                                "type": "keyword",
+                                "index": false,
+                                "doc_values": false
+                            },
+                            "funPanelEnabled": {
+                                "type": "boolean",
+                                "index": false
+                            },
+                            "operatorBarDisabled": {
+                                "type": "boolean",
+                                "index": false
+                            },
+                            "showNetPosition": {
+                                "type": "boolean",
+                                "index": false
+                            },
+                            "rgpEnabled": {
+                                "type": "boolean",
+                                "index": false
+                            },
+                            "nativeRequirement": {
+                                "type": "object",
+                                "enabled": false
+                            },
+                            "foregroundLogoMedia": {
+                                "type": "object",
+                                "enabled": false
+                            },
+                            "loggedOutForegroundLogoMedia": {
+                                "type": "object",
+                                "enabled": false
+                            },
+                            "backgroundMedia": {
+                                "type": "object",
+                                "enabled": false
+                            },
+                            "loggedOutBackgroundMedia": {
+                                "type": "object",
+                                "enabled": false
+                            },
+                            "bynderGameInfoGameTile": {
+                                "type": "object",
+                                "enabled": false
+                            },
+                            "bynderLoggedInGameTile": {
+                                "type": "object",
+                                "enabled": false
+                            },
+                            "bynderLoggedOutGameTile": {
+                                "type": "object",
+                                "enabled": false
+                            },
+                            "bynderVideoGameTile": {
+                                "type": "object",
+                                "enabled": false
+                            },
+                            "bynderFunPanelBackgroundImage": {
+                                "type": "object",
+                                "enabled": false
+                            }
+                        }
+                    },
+                    "siteGame": {
+                        "type": "object",
+                        "dynamic": true,
+                        "properties": {
+                            "chat": {
+                                "type": "object",
+                                "enabled": false
+                            },
+                            "maxBet": {
+                                "type": "object",
+                                "enabled": false
+                            },
+                            "minBet": {
+                                "type": "object",
+                                "enabled": false
+                            },
+                            "howToPlayContent": {
+                                "type": "object",
+                                "enabled": false
+                            }
+                        }
+                    }
+                }
+            },
+            "aliases": {
+                "ig-models": {},
+                "games-v3-r": {},
+                "games-v3-w": {
+                    "is_write_index": true
+                }
+            }
+        }
+    }
+]

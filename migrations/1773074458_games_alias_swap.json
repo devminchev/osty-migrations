@@ -1,0 +1,55 @@
+[
+    {
+        "id": 1773074458,
+        "command": "apply",
+        "method": "post",
+        "path": "/_aliases",
+        "query": {
+            "actions": [
+                {
+                    "remove": {
+                        "index": "games-v2",
+                        "alias": "games-v2-w"
+                    }
+                },
+                {
+                    "remove": {
+                        "index": "games-v2",
+                        "alias": "ig-models"
+                    }
+                },
+                {
+                    "remove": {
+                        "index": "games-v2",
+                        "alias": "games-v2-r"
+                    }
+                },
+                {
+                    "remove": {
+                        "index": "games-v3",
+                        "alias": "games-v3-r"
+                    }
+                },
+                {
+                    "remove": {
+                        "index": "games-v3",
+                        "alias": "games-v3-w"
+                    }
+                },
+                {
+                    "add": {
+                        "index": "games-v3",
+                        "alias": "games-v2-r"
+                    }
+                },
+                {
+                    "add": {
+                        "index": "games-v3",
+                        "alias": "games-v2-w",
+                        "is_write_index": true
+                    }
+                }
+            ]
+        }
+    }
+]
